@@ -1,18 +1,18 @@
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
-// DOM LINKS
+
 const formEl = document.querySelector('.form');
 const delayEl = document.querySelector('input[name="delay"]');
 const stepEl = document.querySelector('input[name="step"]');
 const amountEl = document.querySelector('input[name="amount"]');
 
-//  --------------------------------------------------
+
 
 function createPromise(position, delay) {
   return new Promise((resolve, reject) => {
     const shouldResolve = Math.random() > 0.3;
 
-    // async operation
+
     setTimeout(() => {
       if (shouldResolve) {
         resolve({ position, delay });
@@ -22,7 +22,7 @@ function createPromise(position, delay) {
     }, delay);
   });
 }
-//  --------------------------------------------------
+
 
 function handleSubmit(event) {
   event.preventDefault();
@@ -38,7 +38,7 @@ function handleSubmit(event) {
       });
 
     delayValue += Number(stepEl.value);
-    // delayvalue = delayValue + Number(stepEl.value)
+
   }
 }
 
